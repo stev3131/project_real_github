@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>HOME CHAT</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <style>
+          #start{
+            border: 10px solid #00ace0;
+            color: black;
+            font-size: 30px;
+          }
+          .title {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            border: 10px solid #00ace0;
+            padding: 10px;
+            max-width: 100%;
+          }
+          button{
+            padding: 15px;
+            width:100%;
+            font-size: 50px;
+            background-color: #00ace0;
+          }
+        </style>
+    </head>
+  <body>
+    <header>
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a id="start" class="nav-link" href="/">HOME</a>
+        </li>
+        <li class="nav-item">
+          <a id="start" class="nav-link active" href="/prevideo">VIDEOCHAT</a>
+        </li>
+        <li class="nav-item">
+            <a id="start" class="nav-link" href="/addChat">ADD CHANNEL</a>
+        </li>
+        <li class="nav-item">
+            <a id="start" class="nav-link" href="/joinChat">JOIN CHANNEL</a>
+        </li>
+        <li class="nav-item">
+          <a id="start" class="nav-link" href="/help">HELP</a>
+        </li>
+        <li class="nav-item">
+          <a id="start" class="nav-link" href="/userout">LOGOUT</a>
+        </li>
+      </ul>
+    </header>
+    <div class="title">
+      <h3>Here you can meet different people and comutication with them</h3>
+    </div>
+    <a href="/geneRoom/?room=create">
+      <div class="btn-group" style="width:100%">
+        <button>CREATE A ROOM</button>
+      </div>
+    </a>
+    <div class="title">
+      <h3>OR</h3>
+    </div>
+    <a href="/geneRoom/?room=join">
+      <div class="btn-group" style="width:100%">
+        <button>JOIN A ROOM</button>
+      </div>
+    </a>
+    <div class="title">
+      <h3>they will max eight people to room</h3>
+    </div>
+  </body>
+</html>

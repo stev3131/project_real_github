@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>HOME CHAT</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <style>
+          #start{
+            border: 10px solid #00ace0;
+            color: black;
+            font-size: 30px;
+          }
+          #user-found{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+          }
+          button{
+            padding: 15px;
+            width:100%;
+            font-size: 50px;
+            background-color: #00ace0;
+          }
+        </style>
+        <script>
+          $(function () {
+            $('form').submit(function(e) {
+              e.preventDefault();
+              $("#user-found").empty();
+              user = $('#user').val();
+              for(var i = 0; i < jsonAllUser.length; i++){
+                if(user == jsonAllUser[i].substr(0,user.length))
+                  $('#user-found').append($('<a href="/joinChatReg?name='+jsonAllUser[i]+'"><div class="btn-group" style="width:100%"><button>'+jsonAllUser[i]+'</button></div></a>'))
+              }
+              $('#user').val('');
+              return false;
+            })
+          })
+        </script>
+        <script>
+          $(document).ready(function () {
+           $.ajax({
+               url: './database/user.js',
+               dataType: "json",
+               data: [],
+               success:function(json){
+                  jsonAllUser = json;
+               },
+               error:  function(errore){
+                   $('#user-found').append("<h1>"+"error in the database"+"</h1>");
+              }
+             });
+           });
+        </script>
+    </head>
+  <body>
+    <header>
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a id="start" class="nav-link" href="/">HOME</a>
+        </li>
+        <li class="nav-item">
+          <a id="start" class="nav-link" href="/prevideo">VIDEOCHAT</a>
+        </li>
+        <li class="nav-item">
+            <a id="start" class="nav-link" href="/addChat">ADD CHANNEL</a>
+        </li>
+        <li class="nav-item">
+            <a id="start" class="nav-link active" href="/joinChat">JOIN CHANNEL</a>
+        </li>
+        <li class="nav-item">
+          <a id="start" class="nav-link" href="/help">HELP</a>
+        </li>
+        <li class="nav-item">
+          <a id="start" class="nav-link" href="/userout">LOGOUT</a>
+        </li>
+      </ul>
+    </header>
+    <nav style="background-color: #00ace0"class="navbar navbar-expand-sm"><!--bg-dark navbar-dark-->
+      <h3 style="color:white;">Insert to ... and we find them</h3>
+      <form class="form-inline" action="">
+        <div style="margin-left:100px;" class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">@</span>
+          </div>
+          <input id="user" type="text" class="form-control" placeholder="Username or Channel">
+        </div>
+      </form>
+    </nav>
+    <div id="user-found">
+      <!--<a href="/joinChatReg?name=franco">
+        <div class="btn-group" style="width:100%">
+          <button>franco</button>
+        </div>
+      </a> elemento trovato-->
+    </div>
+  </body>
+</html>

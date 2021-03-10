@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>HOME CHAT</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <style>
+          body{
+            background-color: white;
+          }
+          #start{
+            border: 10px solid #00ace0;
+            color: black;
+            font-size: 30px;
+          }
+          #layoutChannel{
+            border: 10px solid #00ace0;
+            padding: 3px;
+            display: flex;
+            flex-direction: column;
+            height: 860px;
+            overflow: auto;
+          }
+          #layoutChat{
+            border: 10px solid #00ace0;
+            padding: 10px;
+            max-width: 100%;
+          }
+          #chat-link{
+            font-size: 50px;
+            color: black;
+          }
+          #userPng{
+            padding: 3px;
+            margin-left: 12px;
+          }
+          .otherP{
+            float:left;
+            margin-right: auto;
+            margin-top: 2px;
+            padding: 10px;
+            border-radius: 50px;
+            background-color: #00ace0;
+            max-width: 45%;
+          }
+          .Me{
+            margin-top: 2px;
+            padding: 15px;
+            border-radius: 50px;
+            text-align: right;
+            float: right;
+            margin-left: auto;
+            background-color: green;
+            max-width: 45%;
+          }
+          .otherUser{
+            float:left;
+            margin-right: auto;
+            margin-top: 2px;
+            padding: 15px;
+            border-radius: 50px;
+            background-color: #00ace0;
+            max-width: 45%;
+          }
+          #f{
+            /*permette di andare a capo*/
+            display: flex;
+            flex-direction: column;
+            color: white;
+            /*capienza di questa tabella*/
+            width: 1387px;
+            height: 600px;
+            /*permette lo scrol della barra se la non entra la roba*/
+            overflow: auto;
+          }
+          p{
+            font-size: 13px;
+          }
+          form { background: #000;padding: 3px; margin-top: 30px; width: 38%; border-radius: 50px;}
+          form input { border: 0; padding: 10px; width: 75%; border-radius: 50px;}
+          form button { width: 23%; background: rgb(130, 224, 255); border: none; padding: 10px;border-radius: 50px;}
+        </style>
+        <!--<script>
+          $(document).ready(function () {
+            $('#f').append($('<div class="Me"><p style="font-size: 20px;">Staij tutt magnate</p></div>').text("message"));
+          });
+        </script>-->
+    </head>
+    <body>
+      <header>
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a id="start" class="nav-link active" href="/">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a id="start" class="nav-link" href="/prevideo">VIDEOCHAT</a>
+          </li>
+          <li class="nav-item">
+              <a id="start" class="nav-link" href="/addChat">ADD CHANNEL</a>
+          </li>
+          <li class="nav-item">
+              <a id="start" class="nav-link" href="/joinChat">JOIN CHANNEL</a>
+          </li>
+          <li class="nav-item">
+            <a id="start" class="nav-link" href="/help">HELP</a>
+          </li>
+          <li class="nav-item">
+            <a id="start" class="nav-link" href="/userout">LOGOUT</a>
+          </li>
+        </ul>
+      </header>
+      <div class="container-fluid">
+        <div class="row">
+          <!--layout Channel-->
+         <div  id="layoutChannel" class="col-sm-3">
+           <ul id="addChat"class="nav nav-pills nav flex-column">
+             <!--<li class="nav-item active">
+               <a id="chat-link" href="/chat=">
+                 <div class="row">
+                  <div class="col-sm-4">
+                   <img src="user.png" width="100" height="100">
+                 </div>
+                 <div class="col-sm-4">
+                   <h3>fareshi</h3>
+                   <p>marco sta scrivendo</p>
+                 </div>
+                </div>
+              </a>
+            </li>           script per la funzione ajax-->
+          </ul>
+         </div>
+         <!--layout chat-->
+         <div id="layoutChat" class="col-sm-9">
+           <div class="row">
+             <div id="userPng"class="col-sm-">
+               <img src="user.png" width="100" height="100">
+             </div>
+             <div class="col-sm-4">
+               <!--<h1 style="margin-top: 20px;">fareshi</h1> name della chat-->
+            </div>
+           </div>
+           <hr color="#00ace0">
+           <div id="f">
+
+           </div>
+           <div style="margin-left:450px;">
+             <form action="">
+               <input id="chat-box" placeholder="write a message" autocomplete ="off"/>
+               <button>Send</button>
+             </form>
+           </div>
+         </div>
+        </div>
+      </div>
+    </body>
+</html>
